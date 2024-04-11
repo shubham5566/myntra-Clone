@@ -1,22 +1,38 @@
 import React from 'react'
-
+import {Card, Badge,Button} from "react-bootstrap"
 function HomeItem({item}) {
+  
   return (
-    <div className="item-container">
-    <img className="item-image" src={item.image} alt="item image"/>
-    <div className="rating">
-        {item.rating.stars} ⭐ | {item.rating.count}
-    </div>
-    <div className="company-name">{item.company}</div>
-    <div className="item-name">{item.item_name}</div>
-    <div className="price">
-        <span className="current-price">Rs {item.current_price}</span>
-        <span className="original-price">Rs {item.original_price}</span>
-        <span className="discount">( {item.discount_percentage} % OFF)</span>
-    </div>
-    <button className="btn-add-bag" onClick={()=>console.log('item is clicked')}>Add to Bag</button>
-  </div>
-  )
+    <>
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={item.image} alt={item.item_name} />
+        <Card.Body>
+          <Card.Title>{item.item_name}</Card.Title>
+          <Card.Text>{item.company}</Card.Text>
+          <Card.Text className="text-muted">
+            <Badge variant="danger">Actual Price: {item.original_price}</Badge>
+
+            <br/>
+            <Badge variant="primary">
+              Discounted Price:{item.current_price}
+            </Badge>
+            <br/>
+
+            <Badge variant="success">
+              Discount: {item.discount_percentage}%
+            </Badge>
+          </Card.Text>
+          <Card.Text className="text-muted">{item.return_period}</Card.Text>
+          <Card.Text className="text-muted">{item.delivery_date}</Card.Text>
+          
+          <Button onClick = {()=>console.log("item added in cart")}> Add to card </Button>
+        </Card.Body>
+      </Card>
+    </>
+  );
 }
 
 export default HomeItem
+
+
+

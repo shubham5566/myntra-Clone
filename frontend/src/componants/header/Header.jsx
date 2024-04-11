@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Brand from "../../images/myntra_logo.webp"
+import Brand from "../../../public/images/myntra_logo.webp"
 import { Link } from 'react-router-dom';
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineFavorite } from "react-icons/md";

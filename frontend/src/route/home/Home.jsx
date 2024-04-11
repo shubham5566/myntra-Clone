@@ -1,21 +1,14 @@
 import React from 'react'
 import { HomeItem } from '../../componants'
-const item =  {
-    "id": "006",
-    "image": "images/6.jpg",
-    "company": "Nike",
-    "item_name": "Men ReactX Running Shoes",
-    "original_price": 14995,
-    "current_price": 14995,
-    "discount_percentage": 0,
-    "return_period": 14,
-    "delivery_date": "10 Oct 2023",
-    "rating": { "stars": 0, "count": 0 }
-  }
+import {useSelector} from 'react-redux'
 function Home() {
+    const items = useSelector(store => store.items);
+    console.log(items)
   return (
-    <div className="bag-items-container">
-        <HomeItem item={item}/>
+    <div className="d-flex flex-wrap m-4 gap-4">
+        {
+          items.map((item)=><HomeItem key={item.id} item={item}/>)
+        }
       </div>
   )
 }

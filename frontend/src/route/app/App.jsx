@@ -1,4 +1,4 @@
-import {  Footer, Header, HomeItem } from "../../componants"
+import {  Footer, Header } from "../../componants"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Outlet} from 'react-router-dom'

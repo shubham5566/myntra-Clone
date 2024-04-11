@@ -12,7 +12,8 @@ import Studio from './componants/pages/studio/Studio.jsx'
 import HomeAndLiving from './componants/pages/home and Living/HomeAndLiving.jsx'
 import Bag from './route/bag/Bag.jsx'
 import Home from './route/home/Home.jsx'
-
+import {Provider} from 'react-redux'
+import myStore from './store/index.js'
  const router = createBrowserRouter([
   {
     path: '/',
@@ -60,7 +61,12 @@ import Home from './route/home/Home.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Provider store={myStore}>
+
     <RouterProvider router={router}/>
+    </Provider>
+
+    
 
    
    
