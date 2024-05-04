@@ -1,10 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { bagActions } from '../store/bagSlice'
+
 
 function BagItem({item}) {
+  const dispatch = useDispatch()
+  const handleRemoveFromBag = ()=>{
+    dispatch(bagActions.removeFromBag(item.id))
+  }
   return (
     <div>
-        <div className="bag-item-container">
-    <div className="item-left-part">
+        <div className="bag-item-container d-flex gap-4">
+    <div className="item-left-part ">
       <img className="bag-item-img" src={item.image}/>
     </div>
     <div className="item-right-part">
@@ -24,7 +31,7 @@ function BagItem({item}) {
       </div>
     </div>
 
-    <div className="remove-from-cart" onClick={()=>console.log("remove item from bag")}>X</div>
+    <div className="remove-from-cart" onClick={handleRemoveFromBag}>X</div>
   </div>
     </div>
   )
