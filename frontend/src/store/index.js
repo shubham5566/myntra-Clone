@@ -1,11 +1,16 @@
 
-import {configureStore, createSlice} from '@reduxjs/toolkit'
+import {configureStore} from '@reduxjs/toolkit'
 
 import itemSlice from './itemSlice'
+import fetchStatusSlice from './fetchingStatusSlice'
+
+
 
 const myStore = configureStore({
     reducer:{
-        items:itemSlice.reducer
+        items:itemSlice.reducer,
+        fetchStatus:fetchStatusSlice.reducer,
+      
     }
 })
 export default myStore

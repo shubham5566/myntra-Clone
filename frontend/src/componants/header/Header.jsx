@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Brand from "../../../public/images/myntra_logo.webp"
+import Brand from "/images/myntra_logo.webp"
 import { Link } from 'react-router-dom';
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineFavorite } from "react-icons/md";
@@ -15,7 +15,7 @@ function Header() {
     <>
      <Navbar bg="dark" data-bs-theme="dark">
         <Container  fluid="xl">
-          <Link to="/"> <Navbar.Brand ><img class="myntra_home" src={Brand} alt="Myntra Home"/></Navbar.Brand></Link>
+          <Link to="/"> <Navbar.Brand ><img className="myntra_home" src={Brand} alt="Myntra Home"/></Navbar.Brand></Link>
           <Nav className="me-auto">
             <Nav.Link > <Link to ="/men"> Men</Link></Nav.Link>
             <Nav.Link > <Link to = "/women">Women </Link></Nav.Link>

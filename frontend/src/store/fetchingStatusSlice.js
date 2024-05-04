@@ -1,26 +1,23 @@
-import {createSlice} from '@reduxjs/toolkit'
-
+import { createSlice } from "@reduxjs/toolkit";
 
 const fetchStatusSlice = createSlice({
-    name:'fetching',
-    initialState: {
-
-        fetchingDone:false,
-        currentFetching:false
-
+  name: "fetchStatus",
+  initialState: {
+    fetchDone: false,
+    currentlyFetching: false,
+  },
+  reducers: {
+    markFechDone: (state) => {
+       state.fetchDone = true;
     },
-    reducers:{
-        markFechDone: (state)=>{
-            return state.fetchingDone = true
-        },
-        markFectStart: (state)=>{
-            return state.currentFetching =true
-        },
-        markFechingFinish: (state)=>{
-            return state.currentFetching = false
-        }
-    }
-})
-export const fetchStatusSlices = fetchStatusSlice.actions
+    markFetchingStarted: (state) => {
+       state.currentlyFetching = true;
+    },
+    markFechingFinished: (state) => {
+      state.currentlyFetching = false;
+    },
+  },
+});
+export const fetchStutusActions = fetchStatusSlice.actions;
 
-export default fetchStatusSlice
+export default fetchStatusSlice;
