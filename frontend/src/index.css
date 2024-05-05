@@ -107,6 +107,9 @@ a.action_container:link {
 .myntra_home {
     height: 45px;
 }
+.content-center{
+    margin: auto ;
+}
 
 .nav_bar {
     display: flex;

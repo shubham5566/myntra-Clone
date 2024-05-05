@@ -11,11 +11,11 @@ function BagItem({item}) {
   }
   return (
     <Card className='mt-4 p-4'>
-        <div className="bag-item-container d-flex gap-4 ">
-    <div className="item-left-part ">
-      <img className="bag-item-img" src={item.image}/>
+        <div className=" d-flex gap-4 ">
+    <div >
+      <img  src={item.image}/>
     </div>
-    <div className="item-right-part">
+    <div className='content-center' >
       <div className="company">{item.company}</div>
       <div className="item-name">{item.item_name}</div>
       <div className="price-container">
@@ -32,7 +32,7 @@ function BagItem({item}) {
       </div>
     </div>
 
-    <div className="remove-from-cart" onClick={handleRemoveFromBag}><ImCross /></div>
+    <div className='ml-auto' onClick={handleRemoveFromBag}><ImCross /></div>
   </div>
     </Card>
   )
