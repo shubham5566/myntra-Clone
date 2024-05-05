@@ -5,7 +5,7 @@ function Home() {
     const items = useSelector(store => store.items);
   
   return (
-    <div className="d-flex flex-wrap m-4 gap-4">
+    <div className="d-flex flex-wrap justify-content-center gap-4 mtop ">
         {
           items.map((item)=>(
           <HomeItem key={item.id} item={item}/>))

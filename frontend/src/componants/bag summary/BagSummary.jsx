@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Card } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 
 function BagSummary() {
@@ -14,16 +15,17 @@ function BagSummary() {
     let totalDiscount = 0;
 
     finalItems.forEach((bagItem) => {
-      totalItem += bagItem.original_price;
+      totalMRP += bagItem.original_price;
+     
       totalDiscount += bagItem.original_price - bagItem.current_price
       
     });
 
     let finalPayment = totalMRP - totalDiscount + CONVINENCE_FEE;
   return (
-    <>
-     <div className="bag-details-container">
-    <div className="price-header">PRICE DETAILS ({totalItem} Items) </div>
+    <Card className='mt-4 p-4'>
+     <div >
+    <div className="price-header">PRICE DETAILS ({bagItemsIds.length} Items) </div>
     <div className="price-item">
       <span className="price-item-tag">Total MRP</span>
       <span className="price-item-value">₹{totalMRP}</span>
@@ -42,10 +44,10 @@ function BagSummary() {
       <span className="price-item-value">₹{finalPayment}</span>
     </div>
   </div>
-  <button className="btn-place-order">
-    <div className="css-xjhrni">PLACE ORDER</div>
-  </button>
-    </>
+  <Button>
+  PLACE ORDER
+  </Button>
+    </Card>
   )
 }
 

@@ -2,6 +2,8 @@ import React from 'react'
 import {Card, Badge,Button} from "react-bootstrap"
 import { useDispatch, useSelector } from 'react-redux';
 import { bagActions } from '../../store/bagSlice';
+import { IoMdAddCircle } from "react-icons/io";
+import { RiDeleteBin4Fill } from "react-icons/ri";
 function HomeItem({item}) {
   const dispatch= useDispatch();
 const bagItems = useSelector((store)=> store.bag);
@@ -22,24 +24,21 @@ const elementFound = bagItems.indexOf(item.id) >=0 ;
           <Card.Title>{item.item_name}</Card.Title>
           <Card.Text>{item.company}</Card.Text>
           <Card.Text className="text-muted">
-            <Badge variant="danger">Actual Price: {item.original_price}</Badge>
+            <p>Actual Price: {item.original_price}</p>
+            <p> Discounted Price:{item.current_price}</p>
+            <p>  Discount: {item.discount_percentage}%</p>
 
-            <br/>
-            <Badge variant="primary">
-              Discounted Price:{item.current_price}
-            </Badge>
-            <br/>
-
-            <Badge variant="success">
-              Discount: {item.discount_percentage}%
-            </Badge>
+            
           </Card.Text>
-          <Card.Text className="text-muted">{item.return_period}</Card.Text>
-          <Card.Text className="text-muted">{item.delivery_date}</Card.Text>
+          
          {
           elementFound ?
-          <Button variant='danger' onClick = {handleRemoveToBag}> Remove From Cart </Button>  :
-          <Button variant='success' onClick = {handleAddToBag}> Add to card </Button>
+          <Button  className= "w-100" variant='danger' onClick = {handleRemoveToBag}><RiDeleteBin4Fill />{" "} Remove From Bag </Button>  :
+          <Button  className= "w-100" variant='success' onClick = {handleAddToBag}> 
+          <IoMdAddCircle />
+          {" "}
+          Add to Bag
+           </Button>
             
          }
           

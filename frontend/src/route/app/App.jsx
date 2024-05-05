@@ -10,7 +10,7 @@ function App() {
   const fetchStatus = useSelector((store) => store.fetchStatus);
   return (
     <>
-      <Header/>
+      <Header />
       <FetchItem/>
       {
         fetchStatus.currentlyFetching ? <Loader/>:<Outlet/>

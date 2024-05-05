@@ -2,15 +2,16 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { bagActions } from '../store/bagSlice'
 
-
+import { ImCross } from "react-icons/im";
+import { Card } from 'react-bootstrap';
 function BagItem({item}) {
   const dispatch = useDispatch()
   const handleRemoveFromBag = ()=>{
     dispatch(bagActions.removeFromBag(item.id))
   }
   return (
-    <div>
-        <div className="bag-item-container d-flex gap-4">
+    <Card className='mt-4 p-4'>
+        <div className="bag-item-container d-flex gap-4 ">
     <div className="item-left-part ">
       <img className="bag-item-img" src={item.image}/>
     </div>
@@ -31,9 +32,9 @@ function BagItem({item}) {
       </div>
     </div>
 
-    <div className="remove-from-cart" onClick={handleRemoveFromBag}>X</div>
+    <div className="remove-from-cart" onClick={handleRemoveFromBag}><ImCross /></div>
   </div>
-    </div>
+    </Card>
   )
 }
 

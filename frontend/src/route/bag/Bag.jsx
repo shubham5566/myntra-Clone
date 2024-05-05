@@ -2,6 +2,7 @@ import React from "react";
 import BagSummary from "../../componants/bag summary/BagSummary";
 import BagItem from "../../componants/BagItem";
 import { useSelector } from "react-redux";
+import { Card, Col, Row } from "react-bootstrap";
 
 function Bag() {
  const bagItems = useSelector(state => state.bag);
@@ -11,8 +12,9 @@ function Bag() {
     return itemIndex >= 0 
   })
   return (
-    <div className=" d-flex flex-row justify-content-center gap-4 m-4">
-      <div>
+    <Card className="mtop ">
+<div className="d-flex justify-content-center  gap-2">
+      <div >
         {
           finalItems.map((item)=>(
 
@@ -20,11 +22,12 @@ function Bag() {
           ))
         }
       </div>
-
       <div>
         <BagSummary />
       </div>
     </div>
+    </Card>
+    
   );
 }
 
