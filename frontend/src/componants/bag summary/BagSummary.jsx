@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, CardBody, CardHeader } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 
 function BagSummary() {
@@ -24,26 +24,29 @@ function BagSummary() {
     let finalPayment = totalMRP - totalDiscount + CONVINENCE_FEE;
   return (
     <Card className='mt-4 p-4'>
-     <div >
-    <div className="price-header">PRICE DETAILS ({bagItemsIds.length} Items) </div>
-    <div className="price-item">
-      <span className="price-item-tag">Total MRP</span>
-      <span className="price-item-value">₹{totalMRP}</span>
+     
+    <CardHeader>PRICE DETAILS ({bagItemsIds.length} Items) </CardHeader>
+    <CardBody>
+
+    <div className='d-flex justify-content-between'  >
+      <p >Total MRP</p>
+      <p>₹{totalMRP}</p>
     </div>
-    <div className="price-item">
-      <span className="price-item-tag">Discount on MRP</span>
-      <span className="price-item-value priceDetail-base-discount">-₹{totalDiscount}</span>
+    <div className='d-flex justify-content-between'  >
+      <p >Discount on MRP:-</p>
+      <p >₹{totalDiscount}</p>
     </div>
-    <div className="price-item">
-      <span className="price-item-tag">Convenience Fee</span>
-      <span className="price-item-value">{CONVINENCE_FEE}</span>
+    <div className='d-flex justify-content-between'  >
+      <p>Convenience Fee :-</p>
+      <p > ₹{CONVINENCE_FEE}</p>
     </div>
     <hr/>
-    <div className="price-footer">
-      <span className="price-item-tag">Total Amount</span>
-      <span className="price-item-value">₹{finalPayment}</span>
+    <div  className='d-flex justify-content-between' >
+      <p >Total Amount:-</p>
+      <p>₹{finalPayment}</p>
     </div>
-  </div>
+    </CardBody>
+  
   <Button>
   PLACE ORDER
   </Button>
